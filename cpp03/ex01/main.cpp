@@ -6,28 +6,30 @@
 /*   By: mich <mich@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 10:24:50 by mich              #+#    #+#             */
-/*   Updated: 2023/06/07 15:19:43 by mich             ###   ########.fr       */
+/*   Updated: 2023/06/07 15:16:54 by mich             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main() {
-	ClapTrap clapTrap("Clappy");
+    {
+        ClapTrap claptrap("Claptrap1");
+        claptrap.attack("Enemy1");
+        claptrap.takeDamage(5);
+        claptrap.beRepaired(3);
+    }
 
-	clapTrap.attack("enemy");
-	clapTrap.takeDamage(5);
-	clapTrap.beRepaired(3);
+    std::cout << "-----" << std::endl;
 
-	ClapTrap clapTrap2 = clapTrap;
-	clapTrap2.attack("enemy");
-	clapTrap2.takeDamage(2);
-	clapTrap2.beRepaired(1);
+    {
+        ScavTrap scavtrap("Scavtrap1");
+        scavtrap.attack("Enemy2");
+        scavtrap.takeDamage(10);
+        scavtrap.beRepaired(2);
+        scavtrap.guardGate();
+    }
 
-	ClapTrap clapTrap3("Another ClapTrap");
-	clapTrap3.attack("enemy");
-	clapTrap3.takeDamage(4);
-	clapTrap3.beRepaired(2);
-
-	return 0;
+    return 0;
 }

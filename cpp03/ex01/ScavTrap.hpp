@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mich <mich@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/07 10:24:50 by mich              #+#    #+#             */
-/*   Updated: 2023/06/07 15:19:43 by mich             ###   ########.fr       */
+/*   Created: 2023/06/07 16:51:56 by mich              #+#    #+#             */
+/*   Updated: 2023/06/07 16:52:04 by mich             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int main() {
-	ClapTrap clapTrap("Clappy");
+# include "ClapTrap.hpp"
 
-	clapTrap.attack("enemy");
-	clapTrap.takeDamage(5);
-	clapTrap.beRepaired(3);
+class ScavTrap : public ClapTrap{
+	public:
+		ScavTrap(std::string name);
+		ScavTrap(const ScavTrap& other);
+		~ScavTrap();
+		ScavTrap& operator=(const ScavTrap& other);
 
-	ClapTrap clapTrap2 = clapTrap;
-	clapTrap2.attack("enemy");
-	clapTrap2.takeDamage(2);
-	clapTrap2.beRepaired(1);
+	void	guardGate();
+};
 
-	ClapTrap clapTrap3("Another ClapTrap");
-	clapTrap3.attack("enemy");
-	clapTrap3.takeDamage(4);
-	clapTrap3.beRepaired(2);
-
-	return 0;
-}
+#endif

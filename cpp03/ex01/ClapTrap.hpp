@@ -6,7 +6,7 @@
 /*   By: mich <mich@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 10:23:59 by mich              #+#    #+#             */
-/*   Updated: 2023/06/07 15:19:20 by mich             ###   ########.fr       */
+/*   Updated: 2023/06/07 15:19:07 by mich             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <string>
 
 class ClapTrap {
-	private:
+	protected:
 		std::string _name;
 		int _hitPoints;
 		int _energyPoints;
